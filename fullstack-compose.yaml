@@ -8,13 +8,21 @@ services:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: CourseDetail
     ports:
-      - '3307:3306'
+      - '3308:3306'
     networks:
       - custom-network
   backend:
-    image: vishnuve/backend:fs
-    container_name: 
-      - spring-be
+    image: vishnuve/backend:v2sql
+    container_name: spring-be
+    environment:
+      SPRING_DATASOURCE_URL: 'jdbc:mysql://db:3306/CourseDetail'
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.mysql.cj.jdbc.Driver
+      SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: org.hibernate.dialect.MySQL8Dialect
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_SQL_INIT_MODE: always
+      spring.sql.init.data-locations: classpath:script.sql
     restart: on-failure
     ports:
       - '8080:8080'
