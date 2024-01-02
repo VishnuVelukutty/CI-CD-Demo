@@ -1,25 +1,15 @@
-V.imp 
-To Do 
-1. Solve mysql error 
-2. React  UI Refinement 
-3. Rebuild images and containers 
+TO DO:
+1. UI Refinement (Proper react declarative way) 
 
+2. Rule based Page Diaplay (Student = just view courses and instances, Teacher = view and add but no delete, Admin = all)
 
-Commands to run Docker files to create a custom image 
-```
-docker build -t <img-name>:<tag> -f <filename-img> <path> (.)
-```
-Now to run it
-```
-```
+3. Updated JAVA code with response and status codes 
 
-Command to push it into registry 
-```
+4. Show error in view rather than console 
 
-```
+5. There are still logic implementations to be done  
 
 Commands to run Docker yaml file  
-
 ```
 docker compose -f <docker-3-compose>.yaml up
 ```
