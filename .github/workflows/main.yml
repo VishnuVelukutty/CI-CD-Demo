@@ -21,7 +21,7 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: |
-        if [ -n "$(git diff --name-only ${{ github.sha }} ${{ github.sha^ }} 'frontend/')" ]; then
+        if [ -n "$(git diff --name-only ${GITHUB_SHA} ${GITHUB_SHA}^ 'frontend/')" ]; then
           # Build and push frontend Docker image
           cd frontend
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
@@ -29,7 +29,7 @@ jobs:
           docker push vishnuve/frontend:latest
         fi
 
-        if [ -n "$(git diff --name-only ${{ github.sha }} ${{ github.sha^ }} 'backend/')" ]; then
+        if [ -n "$(git diff --name-only ${GITHUB_SHA} ${GITHUB_SHA}^ 'backend/')" ]; then
           # Build and push backend Docker image
           cd backend
           echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
