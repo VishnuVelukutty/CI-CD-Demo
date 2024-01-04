@@ -1,13 +1,11 @@
 TO DO:
 1. UI Refinement (Proper react declarative way) 
 
-2. Rule based Page Diaplay (Student = just view courses and instances, Teacher = view and add but no delete, Admin = all)
+2. Rule based Page Display (Student = just view courses and instances, Teacher = view and add but no delete, Admin = all) UPDATE : Views done rules remaining
 
-3. Updated JAVA code with response and status codes 
+3. Update JAVA code with response and status codes 
 
-4. Show error in view rather than console 
-
-5. There are still logic implementations to be done  
+4. Show error in view rather than console 1/? done
 
 Commands to run Docker yaml file  
 ```
